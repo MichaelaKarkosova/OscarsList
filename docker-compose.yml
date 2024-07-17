@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: oscars-app
+    ports:
+      - "8888:80"
+    volumes:
+      - .:/var/www/html:cached
+    networks:
+      - backend
+networks:
+  backend:

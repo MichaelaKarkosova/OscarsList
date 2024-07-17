@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oskary za obě role</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Filmy, které obdržely oscary za mužskou i ženskou hlavní roli</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Film</th>
+            <th>Rok</th>
+            <th>Ženská role</th>
+            <th>Mužská role</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for movie, details in bothAwardsMovies %}
+            <tr>
+                <td>{{ movie }}</td>
+                <td>{{ details.year }}</td>
+                <td>{{ details.female }}</td>
+                <td>{{ details.male }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
